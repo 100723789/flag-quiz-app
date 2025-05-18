@@ -95,7 +95,7 @@ async function fetchQuestion() {
     }
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/get_question"); // Fetch question from server
+        const response = await fetch("/get_question"); // Fetch question from server
         const data = await response.json(); // Parse JSON response
 
         // Display the flag image
