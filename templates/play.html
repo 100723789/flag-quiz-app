@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set character encoding -->
+    <meta charset="UTF-8"> 
+
+    <!-- Set viewport for responsive behavior on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Set the page title -->
+    <title>WORLD FLAG QUIZ</title>
+    
+    <!-- Load external CSS stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Load external JavaScript file and defer its loading -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    
+    <!-- Inline CSS to reset default browser styles -->
+    <style>
+        * {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            box-sizing: border-box; /* Include padding and borders in width/height */
+        }
+    </style>
+</head>
+    
+<!-- Set body class for styling the play page -->
+<body class="play">
+
+    <!-- Main container for the page content -->
+    <div class="container">
+
+        <!-- Top section with navigation and quiz info -->
+        <div class="top-section">
+
+            <!-- Back button to return to home -->
+            <button class="backb" onclick="goBack()">Back</button>
+
+            <!-- Display the current score -->
+            <h2 class="scoremessage">Score: <span>0</span></h2>
+
+            <!-- Display the current question number -->
+            <h2 class="question-number">1/20</h2>
+        </div>
+
+        <!-- Section to display the flag and options -->
+        <div class="flags">
+
+            <!-- Container for flag image -->
+            <div class="flagimage">
+                <img src="" alt="Flag" /> <!-- Flag image goes here -->
+            </div>
+
+            <!-- Container for flag options -->
+            <div class="flagoptions">
+                <ul></ul> <!-- Options will be dynamically populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Inline script for handling "Back" button functionality -->
+    <script>
+        function goBack() {
+            // Clear quiz-related data from localStorage to reset progress
+            localStorage.removeItem('quizScore');  // Remove saved score
+            localStorage.removeItem('currentQuestion');  // Remove saved current question
+            localStorage.removeItem('difficulty');  // Optionally clear saved difficulty
+            localStorage.removeItem('questionCount');  // Optionally clear saved question count
+
+            // Redirect to the home page
+            window.location.href = "/";  // Navigate back to main page
+        }
+    </script>
+</body>
+</html>

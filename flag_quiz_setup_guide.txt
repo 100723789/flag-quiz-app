@@ -1,0 +1,74 @@
+Step-by-Step Guide to Run Flag Quiz App
+
+1. Set Up Your Project Folder:
+   - Create a project folder for your flag quiz app (e.g., flag_quiz).
+
+2. Install Python and Set Up a Virtual Environment:
+   - If Python is not installed, download and install it from https://www.python.org/downloads/
+   - During installation, make sure to check the box to "Add Python to PATH".
+   - Open a terminal (Command Prompt or PowerShell) and navigate to your project folder:
+     cd C:\path\to\flag_quiz
+   - Create a virtual environment:
+     python -m venv venv
+   - Activate the virtual environment:
+     On Windows: .\venv\Scripts\activate
+     On macOS/Linux: source venv/bin/activate
+
+3. Install Required Dependencies:
+   - With the virtual environment active, install Flask:
+     pip install Flask
+   - If you are using additional libraries (e.g., requests), install them using pip:
+     pip install requests
+
+4. Project Structure:
+   Ensure the project folder has the following structure:
+   flag_quiz/
+     app.py          (Flask application)
+     flags.py        (Flag data)
+     venv/           (Virtual environment folder (automatically created))
+     requirements.txt  (This will be created later)
+
+5. Create the requirements.txt File:
+   - To generate a requirements.txt file with your installed dependencies, run:
+     pip freeze > requirements.txt
+
+6. Running the Flask Application:
+   - Make sure the virtual environment is activated.
+   - Run the Flask app with:
+     python app.py
+   - Open a web browser and navigate to http://127.0.0.1:5000/ to see the flag quiz in action.
+
+7. Stopping the Flask App:
+   - To stop the Flask application, press CTRL+C in your terminal.
+
+8. Deactivating the Virtual Environment:
+   - When finished, deactivate the virtual environment by running:
+     deactivate
+
+9. Reinstalling Dependencies (for others):
+   - If you or someone else wants to run your project on another machine, follow these steps:
+     1. Clone or copy the project files.
+     2. Create and activate the virtual environment.
+     3. Install the required dependencies:
+        pip install -r requirements.txt
+     4. Run the Flask app with python app.py.
+
+Summary of Commands:
+
+Create and activate virtual environment:
+python -m venv venv
+.\venv\scripts\activate
+source venv/bin/activate  (macOS/Linux)
+
+Install Flask and other dependencies:
+pip install Flask
+pip install requests (if needed)
+
+Freeze the installed packages into requirements.txt:
+pip freeze > requirements.txt
+
+Run the Flask app:
+python app.py
+
+Deactivate the virtual environment:
+deactivate

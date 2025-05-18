@@ -1,0 +1,335 @@
+/* Css for index html page */
+.index { 
+    background-image: url(https://external-preview.redd.it/W2hhG3gMiUqkfTWrw_0TwNVqQ21hzElyLU22iIwfxKY.jpg?auto=webp&s=9ef74ee4cb8f4a23c14bb953aa7ffef54bd91716); /* Set background image */
+    background-size: cover; /* Cover the whole page */
+    background-position: center; /* Center the background */
+    background-repeat: no-repeat; /* No repeating background */
+    background-attachment: fixed; /* Fixed background while scrolling */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.center-container { 
+    text-align: center; /* Center text */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Center items */
+    justify-content: center; /* Center items vertically */
+    gap: 20px; /* Space between elements */
+}
+
+h1 {
+    font-size: 100px; /* Large title */
+    font-weight: bold; /* Bold text */
+    color: white; /* White text */
+    text-shadow: 
+        2px 2px 0px black,  
+        -2px 2px 0px black, 
+        2px -2px 0px black, 
+        -2px -2px 0px black; /* Black border around text */
+    margin: 0; /* Remove margin */
+    text-align: center; /* Center text */
+}
+
+.playbutton {
+    padding: 50px 150px; /* Big padding */
+    background-color: green; /* Green button */
+    color: black; /* Black text */
+    border: none; /* No border */
+    border-radius: 100px; /* Rounded corners */
+    font-size: 80px; /* Big font */
+    font-weight: 500; /* Medium bold text */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth color change */
+}
+
+.optionsbutton {
+    padding: 30px 50px; /* Padding */
+    background-color: white; /* White button */
+    color: black; /* Black text */
+    border: none; /* No border */
+    border-radius: 100px; /* Rounded corners */
+    font-size: 80px; /* Big font */
+    font-weight: 500; /* Medium bold text */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* css for options page */
+.backgroundd {
+    background-color: #00AEEF; /* Blue background */
+    padding: 50px; /* Padding inside */
+    border-radius: 15px; /* Rounded corners */
+    width: 50%; /* Half page width */
+    min-width: 350px; /* Minimum width */
+    text-align: left; /* Align text left */
+    color: black; /* Black text */
+}
+
+.back {
+    background: white; /* White background */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin-bottom: 20px; /* Space below */
+}
+
+.switch {
+    position: relative; /* Positioning */
+    display: inline-block; /* Inline block */
+    width: 34px; /* Width */
+    height: 20px; /* Height */
+    margin-left: 10px; /* Space from text */
+}
+.switch input {
+    opacity: 0; /* Hide input */
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute; /* Positioned absolutely */
+    cursor: pointer; /* Pointer cursor */
+    top: 0px; left: 0px; right: 0px; bottom: 0px; /* Full stretch */
+    background-color: white; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    transition: 0.4s; /* Smooth animation */
+    width: 100%;
+}
+
+input:checked + .slider {
+    background-color: green; /* Green when checked */
+}
+
+.slider:before {
+    content: ""; /* Empty content */
+    position: absolute; /* Absolutely positioned */
+    height: 14px; width: 14px; /* Size */
+    left: 3px; bottom: 3px; /* Position inside */
+    background-color: white; /* White color */
+    transition: 0.4s; /* Smooth move */
+    border-radius: 50%; /* Round */
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px); /* Move when checked */
+}
+
+.levels, .selections {
+    display: flex; /* Flex layout */
+    gap: 10px; /* Space between items */
+}
+
+.option1, .option2, .optionselected {
+    background-color: white; /* White background */
+    border: none; /* No border */
+    padding: 10px 40px; /* Padding */
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-weight: bold; /* Bold text */
+}
+
+.continents {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Space between */
+    margin-bottom: 20px; /* Space below */
+}
+
+.selected {
+    background-color: #4CAF50 !important; /* Green background */
+    color: white; /* White text */
+    border: 2px solid #388E3C; /* Dark green border */
+    font-weight: bold; /* Bold text */
+}
+
+.levels, .selections {
+    display: flex; /* Flex layout */
+    gap: 10px; /* Gap between */
+}
+
+.levels button, .selections button {
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    border: none; /* No border */
+    padding: 10px 40px; /* Padding */
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.levels button.selected, .selections button.selected {
+    background-color: white; /* Keep white when selected */
+    color: rgb(0, 0, 0); /* Black text */
+}
+
+/* css for play page */
+body.play {
+    background-color: #00AEEF; /* Blue background */
+    color: white; /* White text */
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Column layout */
+    height: 100vh; /* Full height */
+    text-align: center; /* Center text */
+    overflow: hidden; /* Hide overflow */
+    justify-content: center; /* Center items */
+    align-items: center; /* Center items */
+}
+
+body.options {
+    background-color: #00AEEF; /* Same background as play */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%; /* Width */
+    max-width: 800px; /* Max width */
+}
+
+.top-section {
+    display: flex; /* Flex layout */
+    justify-content: space-between; /* Space between */
+    align-items: center; /* Align center */
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space below */
+}
+
+.backb {
+    background-color: white; /* White button */
+    color: black; /* Black text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    border-radius: 20px; /* Rounded */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.scoremessage {
+    text-align: center; /* Center text */
+    font-size: 2rem; /* Big font */
+    flex: 1; /* Flex item */
+}
+
+.userpoints {
+    text-align: right; /* Right align */
+    font-size: 2rem; /* Big font */
+}
+
+.flags {
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Center items */
+    width: 100%; /* Full width */
+}
+
+.flagimage img {
+    width: 100%; /* Full width */
+    max-width: 400px; /* Max width */
+    height: auto; /* Auto height */
+    display: block; /* Block element */
+}
+
+.flagoptions ul {
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Column */
+    align-items: center; /* Center items */
+    width: 100%; /* Full width */
+    padding: 0; /* No padding */
+    margin-top: 20px; /* Space above */
+    list-style: none; /* No list style */
+}
+
+.flagoptions ul li {
+    font-size: 1.5rem; /* Large text */
+    text-transform: capitalize; /* Capitalize text */
+    margin-bottom: 1rem; /* Margin below */
+    background-color: white; /* White background */
+    padding: 10px; /* Padding */
+    border-radius: 8px; /* Rounded corners */
+    width: 200px; /* Fixed width */
+    color: black; /* Black text */
+    cursor: pointer; /* Pointer cursor */
+    text-align: center; /* Center text */
+}
+
+/* Style for confirmation message */
+.confirmation-message {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    border-radius: 30px; /* Rounded */
+    margin-top: 10px; /* Margin above */
+    text-align: center; /* Center text */
+    font-weight: bold; /* Bold text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    animation: fadeIn 0.5s ease-out, fadeOut 1s 1.5s ease-out; /* Fade animations */
+}
+
+/* Keyframes for fade-in and fade-out animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translateY(-20px); /* Start above */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* In place */
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1; /* Start visible */
+        transform: translateY(0); /* In place */
+    }
+    100% {
+        opacity: 0; /* Fade out */
+        transform: translateY(20px); /* Move down */
+    }
+}
+
+.backgroundd2 {
+    background-color: #00AEEF; /* Blue background */
+    padding: 50px; /* Padding */
+    border-radius: 15px; /* Rounded */
+    width: 50%; /* Half width */
+    min-width: 350px; /* Minimum width */
+    text-align: left; /* Align left */
+    color: black; /* Black text */
+}
+
+.flag-grid {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Auto fitting columns */
+    gap: 20px; /* Gap between flags */
+    margin-top: 20px; /* Margin on top */
+}
+
+.flag-entry {
+    background: white; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 10px; /* Padding */
+    text-align: center; /* Center text */
+    transition: transform 0.3s ease; /* Smooth hover */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.flag-entry:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}

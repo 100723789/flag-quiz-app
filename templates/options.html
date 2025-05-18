@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set character encoding -->
+    <meta charset="UTF-8"> 
+
+    <!-- Set viewport settings for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Set the page title -->
+    <title>Options - WORLD FLAG QUIZ</title>
+
+    <!-- Load external stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<!-- Set body class for styling the options page -->
+<body class="options">
+
+    <!-- Container to center content -->
+    <div class="center-container">
+
+        <!-- Main heading -->
+        <h1>OPTIONS</h1>
+
+        <!-- Difficulty selection heading -->
+        <h2>Select Difficulty</h2>
+
+        <!-- Difficulty level buttons -->
+        <div class="levels">
+            <button class="difficulty-button" id="easy-btn">Easy</button>
+            <button class="difficulty-button" id="medium-btn">Medium</button>
+            <button class="difficulty-button" id="hard-btn">Hard</button>
+        </div>
+
+        <!-- Question limit selection heading -->
+        <h2>Select Number of Questions</h2>
+
+        <!-- Number of questions buttons -->
+        <div class="selections">
+            <button class="question-limit-button" id="20-btn">20 Questions</button>
+            <button class="question-limit-button" id="50-btn">50 Questions</button>
+        </div>
+
+        <!-- Button to go back to the home page -->
+        <button class="backb" id="back-btn">Back</button>
+
+    </div>
+
+    <!-- Inline script to handle user selections -->
+    <script>
+        // Wait for the DOM to fully load
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Get saved difficulty or default to 'easy'
+            const savedDifficulty = localStorage.getItem("difficulty") || "easy";
+
+            // Get saved question count or default to 20
+            const savedCount = parseInt(localStorage.getItem("questionCount")) || 20;
+
+            // Get all difficulty buttons
+            const difficultyButtons = document.querySelectorAll(".difficulty-button");
+
+            // Get all question count buttons
+            const countButtons = document.querySelectorAll(".question-limit-button");
+
+            // Helper function to update the selected button styles
+            function updateSelected(buttons, selectedId) {
+                buttons.forEach(btn => {
+                    if (btn.id === selectedId) {
+                        btn.classList.add("selected"); // Highlight selected button
+                        btn.style.backgroundColor = "white"; // Selected button background
+                    } else {
+                        btn.classList.remove("selected"); // Remove highlight from others
+                        btn.style.backgroundColor = ""; // Reset background
+                    }
+                });
+            }
+
+            // Set initial selected states based on saved data
+            updateSelected(difficultyButtons, savedDifficulty + "-btn");
+            updateSelected(countButtons, savedCount + "-btn");
+
+            // Add event listeners for difficulty buttons
+            difficultyButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const level = button.textContent.toLowerCase(); // Get clicked difficulty
+                    localStorage.setItem("difficulty", level); // Save to localStorage
+                    updateSelected(difficultyButtons, level + "-btn"); // Update button styles
+                });
+            });
+
+            // Add event listeners for question count buttons
+            countButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const count = parseInt(button.textContent); // Get selected number
+                    localStorage.setItem("questionCount", count); // Save to localStorage
+                    updateSelected(countButtons, count + "-btn"); // Update button styles
+                });
+            });
+
+            // Handle click on "Back" button
+            document.getElementById("back-btn").addEventListener("click", () => {
+                window.location.href = "/"; // Redirect to home page
+            });
+        });
+    </script>
+
+</body>
+</html>

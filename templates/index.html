@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set character encoding -->
+    <meta charset="UTF-8"> 
+
+    <!-- Set viewport settings for responsive design -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+
+    <!-- Set the page title -->
+    <title>WORLD FLAG QUIZ</title>
+
+    <!-- Load static CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Load static JavaScript file with defer to wait until HTML is parsed -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+
+<!-- Set body class for background and layout styling -->
+<body class="index">
+    
+    <!-- Container to center content vertically and horizontally -->
+    <div class="center-container">
+        
+        <!-- Main heading of the page -->
+        <h1>𝗪𝗢𝗥𝗟𝗗 𝗙𝗟𝗔𝗚 𝗤𝗨𝗜𝗭</h1>
+        
+        <!-- Link to start playing the quiz -->
+        <a href="{{ url_for('play') }}">
+            <button class="playbutton">PLAY</button>
+        </a>
+        
+        <!-- Link to open the options/settings page -->
+        <a href="{{ url_for('options') }}">
+            <button class="optionsbutton">Options</button>
+        </a>
+
+    </div>
+    
+</body>
+</html>

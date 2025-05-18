@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Link the JavaScript file and defer its loading -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+    <!-- Set character encoding -->
+    <meta charset="UTF-8"> 
+
+    <!-- Set viewport settings for responsive design -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+
+    <!-- Set the page title -->
+    <title>WORLD FLAG QUIZ - Results</title>
+
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="style.css"> 
+
+    <!-- (Incorrect) This line tries to load a JavaScript file as a stylesheet -->
+    <link rel="stylesheet" href="script.js"> 
+</head>
+
+<body class="feedback">
+    <!-- Display the main message -->
+    <h1 id="message"> GREAT JOB! </h1>
+
+    <!-- Display the quiz result feedback -->
+    <p id="feedback"> You correctly identified 0 out of 20 flags! </p>
+
+    <!-- Button to go back (calls goBack() function) -->
+    <button class="buttonback" onclick="goBack()"> Back</button>
+</body>
+</html>
