@@ -101,17 +101,23 @@ async function fetchQuestion() {
         // Display the flag image
         document.querySelector(".flagimage img").src = data.flag;
 
-        const optionsList = document.querySelector(".flagoptions ul");
-        optionsList.innerHTML = ""; // Clear previous options
+const optionsList = document.querySelector(".flagoptions ul");
+optionsList.innerHTML = ""; // Clear previous options
 
-        // Create option buttons
-        data.options.forEach(option => {
-            const li = document.createElement("li");
-            li.textContent = option; // Set option text
-            li.classList.add("option-button"); // Add class
-            li.onclick = () => checkAnswer(li, option, data.correct); // Add click event
-            optionsList.appendChild(li); // Add to list
-        });
+// Create option buttons
+data.options.forEach(option => {
+    const li = document.createElement("li");
+    li.textContent = option; // Set option text
+    li.classList.add("option-button"); // Add class
+
+    // ✅ Use addEventListener instead of li.onclick
+    li.addEventListener("click", () => {
+        checkAnswer(li, option, data.correct); // Add click event
+    });
+
+    optionsList.appendChild(li); // Add to list
+});
+
 
         updateQuestionNumber(); // Update question number after loading
     } catch (error) {
