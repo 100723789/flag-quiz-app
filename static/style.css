@@ -198,6 +198,8 @@ body.options {
 .container {
     width: 90%; /* Width */
     max-width: 800px; /* Max width */
+    position: relative;
+    z-index: 10;
 }
 
 .top-section {
@@ -252,6 +254,8 @@ body.options {
     padding: 0; /* No padding */
     margin-top: 20px; /* Space above */
     list-style: none; /* No list style */
+    position: relative;
+    z-index: 10;
 }
 
 .flagoptions ul li {
@@ -265,6 +269,8 @@ body.options {
     color: black; /* Black text */
     cursor: pointer; /* Pointer cursor */
     text-align: center; /* Center text */
+    position: relative;
+    z-index: 10;
 }
 
 /* Style for confirmation message */
