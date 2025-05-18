@@ -135,7 +135,7 @@ function updateQuestionNumber() {
 // Check the answer selected by the user
 async function checkAnswer(element, answer, correct) {
     try {
-        const response = await fetch("http://127.0.0.1:5000/check_answer", {
+        const response = await fetch("/check_answer", {
             method: "POST", // Send POST request
             headers: { "Content-Type": "application/json" }, // Set headers
             body: JSON.stringify({ answer, correct }) // Send selected answer
